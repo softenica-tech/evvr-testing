@@ -1,0 +1,336 @@
+@import "./variables";
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+:root {
+  --background: #F4F4F4;
+  --foreground: #000;
+  --theme-color: #{$theme_color};
+  --white-color: #{$white_color};
+  --black-color: #{$dark_color};
+  --font-family: 'DM Sans', sans-serif;
+}
+html {
+  // Lenis smooth scroll support
+  scroll-behavior: auto; // Let Lenis handle smooth scrolling
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  margin: 0;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: none;
+  font: 400 14px/25px "DM Sans", sans-serif;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // Lenis smooth scroll support
+  overflow-y: auto;
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  line-height: 1.5;
+  margin: 0 0 10px;
+  color: #000;
+  font-weight: 400;
+  font-family: "DM Sans", sans-serif;
+}
+.img-responsive {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.pre-word-line {
+  white-space: pre-line;
+}
+.list-none {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.word-break {
+  word-break: break-word;
+}
+.d-block {
+  display: block;
+}
+.no-padding {
+  padding: 0 !important;
+}
+.is-scrollable {
+  overflow: hidden;
+}
+input[type="submit"],
+button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+}
+img {
+  vertical-align: top;
+  border-style: none;
+}
+*:focus {
+  outline: none;
+}
+.transition {
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+}
+.w-100 {
+  width: 100% !important;
+}
+.error-msg {
+  color: red;
+  margin-top: 15px;
+  display: block;
+}
+.error-msg:first-letter {
+  text-transform: capitalize;
+}
+#wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.container {
+  max-width: 1390px;
+  margin: 0 auto;
+  padding: 0 15px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  @media (max-width: $breakpoint_laptop) {
+    max-width: 1300px;
+  }
+  @media (max-width: $breakpoint_tablet) {
+    padding: 0 25px;
+  }
+}
+.container.fluid {
+  width: 100%;
+  max-width: none;
+}
+.container:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.required-field {
+  color: #db0000;
+  font-style: normal;
+  margin-left: 5px;
+  font-size: 15px;
+}
+a {
+  text-decoration: none;
+  color: $dark_color;
+}
+.pointer {
+  cursor: pointer;
+}
+.fixed {
+  position: fixed;
+}
+.relative {
+  position: relative;
+}
+.flex {
+  display: flex;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.direction-column {
+  flex-direction: column;
+}
+.direction-row {
+  flex-direction: row;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-end {
+  justify-content: end;
+}
+.items-center {
+  align-items: center !important;
+}
+.text-center {
+  text-align: center;
+  position: relative;
+}
+.items-start {
+  align-items: flex-start;
+}
+.items-end {
+  align-items: flex-end;
+}
+.flex-text-center {
+  justify-content: center;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.m-0 {
+  margin: 0;
+}
+.btn-faded {
+  opacity: 0.5;
+}
+.flex-between-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+input,
+button,
+textarea {
+  font: 400 14px/20px "DM Sans", sans-serif;
+}
+input,
+textarea,
+select {
+  width: 100%;
+  height: 59px;
+  padding: 0 20px;
+  font-size: 14px;
+  background: #FCFCFC;
+  border: 1px solid #DBDBDB;
+  border-radius: 5px;
+  resize: none;
+}
+textarea {
+  height: 217px;
+  padding-top: 20px;
+}
+button:focus,
+textarea:focus,
+input:focus,
+select,
+textarea {
+  outline: none;
+}
+textarea::placeholder,
+input::placeholder {
+  color: rgba(29,67,84,0.5);
+}
+textarea,
+input,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="string"],
+select {
+  color: rgba(29,67,84,0.5);
+}
+input[type="date"] {
+  text-transform: uppercase;
+  background: none;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+}
+select {
+  outline: none;
+}
+.table {
+  width: 100%;
+  border: none;
+  border-collapse: collapse;
+}
+.btn-green {
+  color: white;
+  background-color: #6bb64a;
+  border-radius: 10px;
+  border: 1px solid #6bb64a;
+  padding: 10px 22px;
+  font-size: 13px;
+  @media (max-width: $breakpoint_laptop) {
+    padding: 7px 20px;
+    font-size: 12px;
+  }
+  &:hover {
+    background-color: white;
+    color: #6bb64a;
+    border: 1px solid #6bb64a;
+  }
+}
+.contact_margin {
+  margin-right: 18px;
+}
+.grid-container-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.grid-container-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.grid-container-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  @media screen and (max-width: $breakpoint_tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (max-width: $breakpoint_mobile_portrait) {
+    grid-template-columns: 1fr;
+  }
+}
+.grid-container-5 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  @media screen and (max-width: $breakpoint_tablet) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media screen and (max-width: $breakpoint_mobile_portrait) {
+    grid-template-columns: 1fr;
+  }
+}
+// .bodywrapper {
+//   display: flex;
+//   flex-direction: column;
+// }
+.mt-auto { margin-top: auto;}

@@ -1,0 +1,70 @@
+@import "../../../styles/variables";
+.welcome_image {
+  position: sticky;
+  height: 100vh;
+  top: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; // Hide overflow when video expands to 200%
+  // vertical-align: top;
+  video {
+    min-width: 360px;
+    min-height: 360px;
+    // Remove max-width to allow video to expand to 200%
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: bottom;
+    // object-position: top;
+    // Transition removed - using JavaScript for smooth animation
+    display: block;
+    @media (max-width: 767px) {
+      min-width: 214px;
+      min-height: 214px;
+    }
+  }
+}
+.welcome_wrapper_height { height: 100vh;}
+.welcome_wrapper {
+  text-align: center;
+  padding-bottom: 400px;
+  @media (max-width: $breakpoint_tablet) {
+    padding-bottom: 197px;
+  }
+  img {
+    margin-bottom: 300px;
+    max-width: 100%;
+    @media (max-width: $breakpoint_tablet) {
+      margin: 0 0 141px
+    }
+  }
+  h2 {
+    margin: 0 0 35px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    line-height: 26px;
+    color: #fff;
+    @media (max-width: $breakpoint_tablet) {
+      font-size: 13px;
+    }
+  }
+  h4 {
+    letter-spacing: -1.5px;
+    margin: 0 auto;
+    font-size: 25px;
+    line-height: 32px;
+    color: #fff;
+    max-width: 828px;
+    @media (max-width: $breakpoint_tablet) {
+      font-size: 20px;
+      line-height: 28px;
+    }
+    @media (max-width: 375px) {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+}

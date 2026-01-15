@@ -1,0 +1,247 @@
+@import "../../../styles/variables";
+.header_wrapper {
+  padding: 25px 0 0;
+  display: flex;
+  mix-blend-mode: difference;
+  position: fixed;
+  filter: invert(1);
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  transition: all 0.3s ease-in-out;
+  
+  @media (max-width: $breakpoint_tablet) {
+    display: none !important;
+    padding: 26px 25px 0;
+    // filter: unset;
+  }
+  &.visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  &.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  &.section-story {
+    mix-blend-mode: unset;
+  }
+  
+  .container {
+    align-items: flex-start;
+    @media (max-width: $breakpoint_tablet) {
+      padding: 0;
+    }
+  }
+  .logo {
+    padding: 5px 0 0;
+    transform: scale(0.85); // Reduce logo size by 15% (85% of original)
+    transform-origin: left top; // Scale from top-left corner
+  }
+  
+  // Hamburger Menu Button
+  .hamburger-menu {
+    display: none;
+    margin-left: auto;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10000;
+    position: relative;
+    
+    @media (max-width: $breakpoint_tablet) {
+      display: flex;
+    }
+    
+    span {
+      width: 100%;
+      height: 3px;
+      background-color: #000;
+      border-radius: 2px;
+      transition: all 0.3s ease-in-out;
+      transform-origin: center;
+      position: absolute;
+      left: 0;
+    }
+    
+    span:nth-child(1) {
+      top: 0;
+    }
+    
+    span:nth-child(2) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    span:nth-child(3) {
+      bottom: 0;
+    }
+  }
+  
+  // Hamburger to Cross Animation
+  &.menu-open {
+    // Keep header visible while menu is open (even if scroll logic says "hidden")
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    .hamburger-menu {
+      span {
+        &:nth-child(1) {
+          top: 50%;
+          transform: translateY(-50%) rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+          transform: translateY(-50%) translateX(-10px);
+        }
+        &:nth-child(3) {
+          bottom: auto;
+          top: 50%;
+          transform: translateY(-50%) rotate(-45deg);
+        }
+      }
+    }
+    
+    // White text sections - hamburger should be white
+    // &.section-welcome,
+    // &.section-story,
+    // &.section-investment_image,
+    // &.section-investment {
+    //   .hamburger-menu span {
+    //     background-color: #fff;
+    //   }
+    // }
+  }
+  
+  .menu {
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      li {
+        line-height: 1;
+        a {
+          font-size: 12px;
+          line-height: 17px;
+          font-weight: 900;
+          letter-spacing: 1px;
+          position: relative;
+          color: #000000;
+          transition: color 0.3s ease-in-out;
+          &:hover {
+            &::before {
+              opacity: 1;
+            }
+          }
+          &::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
+            background-color: #000;
+          }
+          &.active {
+            &::before {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    
+    // Mobile Menu Styles
+    @media (max-width: $breakpoint_tablet) {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      max-width: 300px;
+      height: 100vh;
+      transition: right 0.3s ease-in-out;
+      padding: 80px 30px 30px;
+      z-index: 9998;
+      overflow-y: auto;
+      text-align: right;
+      &.active {
+        right: 0;
+      }
+      
+      ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+        
+        li {
+          width: 100%;
+          a {
+            font-size: 16px;
+            color: #000;
+            display: inline-block;
+            padding: 9px 0;
+            
+            &::before {
+              background-color: #000;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  // White background - black text
+  // &.white-bg {
+  //   .menu ul li a {
+  //     color: #000;
+  //     &::before {
+  //       background-color: #000;
+  //     }
+  //   }
+  //   .logo {
+  //     filter: brightness(0);
+  //   }
+    
+  //   @media (max-width: $breakpoint_tablet) {
+  //     .hamburger-menu span {
+  //       background-color: #000;
+  //     }
+  //   }
+  // }
+  // Note: header should never hide on scroll; section classes are used only for styling.
+  
+  // &.section-welcome,
+  // &.section-story,
+  // &.section-investment_image,
+  // &.section-investment {
+  //   .menu ul li a {
+  //     color: #fff;
+  //     &::before {
+  //       background-color: #fff;
+  //     }
+  //   }
+  //   .logo {
+  //     filter: brightness(0) invert(1);
+  //   }
+    
+  //   @media (max-width: $breakpoint_tablet) {
+  //     .hamburger-menu span {
+  //       background-color: #fff;
+  //     }
+  //   }
+  // }
+}
+

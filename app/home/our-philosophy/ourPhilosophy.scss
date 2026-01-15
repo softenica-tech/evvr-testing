@@ -1,0 +1,73 @@
+@import "../../../styles/variables";
+.our_philosophy_wrapper {
+  background-color: #F4F4F4;
+  position: relative;
+  padding: 188px 0 60px;
+  @media (max-width: $breakpoint_tablet) {
+    padding: 104px 0 60px;
+  }
+  .container {
+    max-width: 1290px;
+  }
+  h2 {
+    margin: 0 0 120px;
+    letter-spacing: 2px;
+    font-size: 14px;
+    list-style: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    @media (max-width: $breakpoint_tablet) {
+      margin: 0 0 104px;
+      font-size: 13px;
+    }
+  }
+  h1 {
+    margin: 0 0 187px;
+    font-size: 108px; // Keep original size - not reduced
+    line-height: 0.88;
+    font-weight: 800;
+    letter-spacing: -4px;
+    text-transform: uppercase;
+    // max-width: 1059px;
+    color: #fff;
+    @media (max-width: $breakpoint_tablet) {
+      font-size: 56px; // Keep original size - not reduced
+      line-height: 50px;
+      letter-spacing: -2px;
+      margin: 0 0 154px;
+    }
+    .word {
+      display: inline-block;
+      span {
+        transition: color 0.1s ease;
+        // display: inline;
+      }
+    }
+  }
+  .our_philosophy_inner {
+    max-width: 786px;
+    margin: 0 auto;
+    text-align: center;
+    h4 {
+      font-size: 25px;
+      line-height: 32px;
+      margin: 0 0 30px;
+      letter-spacing: -1.5px;
+      @media (max-width: $breakpoint_tablet) {
+        font-size: 20px;
+        line-height: 28px;
+      }
+    }
+    img {
+      margin: 120px 0 0;
+      border-radius: 10px;
+      object-fit: cover;
+      @media (max-width: $breakpoint_tablet) {
+        margin: 162px 0 0;
+        width: 214px;
+        height: 214px;
+      }
+    }
+  }
+}

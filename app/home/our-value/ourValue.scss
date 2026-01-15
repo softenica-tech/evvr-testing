@@ -1,0 +1,44 @@
+@import "../../../styles/variables";
+.our_value_wrapper {
+  background-color: #F4F4F4;
+  position: relative;
+  padding: 375px 0 445px;
+  text-align: center;
+  @media (max-width: $breakpoint_tablet) {
+    padding: 252px 0 294px;
+  }
+  .container {
+    max-width: 1293px;
+  }
+  h2 {
+    margin: 0 auto;
+    font-size: 61px;
+    line-height: 1.029;
+    font-weight: 600;
+    letter-spacing: -3px;
+    color: #fff;
+    display: block;
+    @media (max-width: $breakpoint_mini_laptop) {
+      br { display: none;}
+      font-size: 50px;
+      max-width: 680px;
+    }
+    @media (max-width: $breakpoint_tablet) {
+      font-size: 36px;
+      line-height: 42px;
+      letter-spacing: -2px;
+      max-width: 500px;
+    }
+    @media (max-width: 375px) {
+      font-size: 32px;
+      line-height: 38px;
+    }
+    .word {
+      display: inline-block;
+      span {
+        transition: color 0.1s ease;
+        // display: inline;
+      }
+    }
+  }
+}

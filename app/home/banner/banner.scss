@@ -1,0 +1,45 @@
+@import "../../../styles/variables";
+.banner_wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  h1 {
+    font-size: 97px;
+    line-height: 0.88;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: -4px;
+    @media (max-width: $breakpoint_tablet) {
+      font-size: 50px;
+      line-height: 50px;
+      letter-spacing: -2px;
+    }
+  }
+}
+.banner_image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 0 328px;
+  @media (max-width: $breakpoint_tablet) {
+    padding: 0 0 165px;
+  }
+  video {
+    width: 360px;
+    height: 360px;
+    border-radius: 10px;
+    object-fit: cover;
+    @media (max-width: $breakpoint_tablet) {
+      width: 214px;
+      height: 214px;
+    }
+  }
+}
