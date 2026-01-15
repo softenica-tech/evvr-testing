@@ -415,7 +415,7 @@ export default function Welcome() {
       <div className="welcome_wrapper">
         <div className="container">
           <Image src={bigLogo} alt="biglogo" />
-          <h2>Welcome</h2>
+          <h2>Welcome1</h2>
           <h4>EVVR Capital is the Private Investment Office of the Australian based Powell Family, founded on the belief that every investment carries a responsibility to grow, protect and create something lasting.</h4>
         </div>
       </div>
