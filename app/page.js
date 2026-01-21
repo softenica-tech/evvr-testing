@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Banner/>
-      {/* <Welcome/> */}
+      <Welcome/>
       <OurPhilosophy/>
       <Ethos/>
       {/* <CallToAction/> */}
