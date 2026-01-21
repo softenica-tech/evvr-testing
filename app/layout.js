@@ -14,7 +14,12 @@ const dmSans = DM_Sans({
 export const metadata = {
   title: "EVVR Capital",
   description: "EVVR Capital is the Private Investment Office of the Australian based Powell Family, founded on the belief that every investment carries a responsibility to grow, protect and create something lasting. We invest with conviction, partner with excellence, and maintain an unconstrained global reach.",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
+};
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({ children }) {
