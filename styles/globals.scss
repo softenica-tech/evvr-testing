@@ -30,6 +30,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   // Lenis smooth scroll support
+  overflow-x: hidden;
   overflow-y: auto;
 }
 body h1,
