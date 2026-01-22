@@ -30,6 +30,10 @@
       min-width: 214px;
       min-height: 214px;
     }
+
+    @media (max-width: 576px) {
+      object-position: 62% center;
+    }
   }
 }
 .ethos_wrapper_height { height: 100vh;}
