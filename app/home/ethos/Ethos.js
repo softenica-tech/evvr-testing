@@ -514,7 +514,7 @@ export default function Ethos() {
           preload="auto"
         >
           {/* <source src="/assets/videos/grey-flower.mp4" type="video/mp4" />  */} 
-          <source src="https://evvr-development.vercel.app/assets/videos/flower-mob.mp4" type="video/mp4" media="(max-width: 576px)" fetchPriority="high" />
+          <source src="https://evvr-development.vercel.app/assets/videos/grey-flower-mob.mp4" type="video/mp4" media="(max-width: 576px)" fetchPriority="high" />
           <source src="https://streamable.com/l/an62gf/mp4.mp4" type="video/mp4" media="(min-width: 577px)" fetchPriority="high" />
           
         </video>
